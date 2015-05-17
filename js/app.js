@@ -1,5 +1,7 @@
 $(document).ready(function(){
-	for (var i =1; i <= 100; i++) {
+	var max = promptUser();
+
+	for (var i =1; i <= max; i++) {
 		if (i % 15 === 0) {
 			$("body").append("<p>FIZZBUZZ</p>");
 		} else if (i % 5 === 0) {
@@ -11,3 +13,19 @@ $(document).ready(function(){
 		}
 	}
 });
+
+
+function promptUser() {
+	var max = prompt("Please enter the maximum number of Fizz Buzzs you would like to see!");
+	nanCheck(max);
+	return max;
+}
+
+function nanCheck(num) {
+	num = parseInt(num);
+	if (num == NaN) {
+		num = promptUser();
+	} else {
+		return num;
+	}
+}
