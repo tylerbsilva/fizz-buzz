@@ -3,21 +3,13 @@ $(document).ready(function(){
 	fizzbuzzer(max);
 });
 
-function nanCheck(num) {
-	if (typeof(num) != Number) {
-		return false;
-	} else {
-		return true;
-	}
-}
-
 function promptUser() {
 	do {
 		var input = parseInt(prompt("Please enter a number!"));
-		var check = nanCheck(input);
-	} while(check == false);
+	} while(input % 1 !== 0);
 	return input;
 }
+
 
 function fizzbuzzer(max) {
 	for (var i =1; i <= max; i++) {
