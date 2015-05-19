@@ -1,22 +1,22 @@
 $(document).ready(function(){
 	var max = promptUser();
-
 	fizzbuzzer(max);
 });
 
-//prompt user
-function promptUser() {
-	var input = prompt("Please enter a number!");
-	nanCheck(input);
-	return input;
-}
-
 function nanCheck(num) {
-	if (parseInt(num) == NaN) {
+	if (typeof(num) != Number) {
 		return false;
 	} else {
-		return true
+		return true;
 	}
+}
+
+function promptUser() {
+	do {
+		var input = parseInt(prompt("Please enter a number!"));
+		var check = nanCheck(input);
+	} while(check == false);
+	return input;
 }
 
 function fizzbuzzer(max) {
